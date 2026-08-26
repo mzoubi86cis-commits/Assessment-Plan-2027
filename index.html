@@ -7,7 +7,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <style>
         * {
             margin: 0;
@@ -27,7 +27,6 @@
             margin: 0 auto;
         }
 
-        /* ===== HEADER ===== */
         .main-header {
             background: linear-gradient(135deg, #0f2b4a, #1a4b6d);
             padding: 25px 35px;
@@ -143,7 +142,6 @@
             margin-left: 4px;
         }
 
-        /* ===== PRINT BUTTON ===== */
         .print-btn-container {
             display: flex;
             justify-content: flex-end;
@@ -186,7 +184,6 @@
             background: #1a5a8a;
         }
 
-        /* ===== TABS ===== */
         .tabs-container {
             display: flex;
             flex-wrap: wrap;
@@ -240,7 +237,6 @@
             background: rgba(255, 255, 255, 0.25);
         }
 
-        /* ===== TAB CONTENT ===== */
         .tab-content {
             display: none;
             animation: fadeIn 0.4s ease;
@@ -261,7 +257,6 @@
             }
         }
 
-        /* ===== TABLES ===== */
         .table-wrapper {
             background: #fff;
             border-radius: 20px;
@@ -301,7 +296,6 @@
             font-weight: 700;
         }
 
-        /* Semester colors */
         .semester-1 .table-header {
             background: #e8f4fd;
             border-bottom-color: #b8d4e8;
@@ -335,7 +329,7 @@
             width: 100%;
             border-collapse: collapse;
             font-size: 13px;
-            min-width: 1200px;
+            min-width: 1300px;
         }
 
         table thead {
@@ -425,7 +419,6 @@
             }
         }
 
-        /* Selects in table */
         .select-sm {
             padding: 4px 8px;
             border-radius: 30px;
@@ -450,7 +443,267 @@
             text-align: center;
         }
 
-        /* ===== EVALUATOR PAGE ===== */
+        .action-buttons {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+        }
+
+        .info-btn {
+            background: none;
+            border: none;
+            color: #1a4b6d;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 4px 6px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-btn:hover {
+            background: #e8f4fd;
+            transform: scale(1.15);
+            color: #0f2b4a;
+        }
+
+        .info-btn i {
+            font-size: 16px;
+        }
+
+        .pdf-btn {
+            background: none;
+            border: none;
+            color: #27ae60;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            padding: 4px 6px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .pdf-btn:hover {
+            background: #eafaf1;
+            transform: scale(1.15);
+            color: #1e8449;
+        }
+
+        .pdf-btn i {
+            font-size: 16px;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 24px;
+            max-width: 800px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 0;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: modalSlideUp 0.4s ease;
+        }
+
+        @keyframes modalSlideUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #0f2b4a, #1a4b6d);
+            padding: 24px 30px;
+            border-radius: 24px 24px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .modal-header h2 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .modal-header h2 i {
+            color: #7bc6f0;
+        }
+
+        .modal-close {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-body .unit-code {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #1a4b6d;
+            padding: 4px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .modal-body .unit-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0f2b4a;
+            margin-bottom: 8px;
+        }
+
+        .modal-body .unit-task {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d7fb9;
+            margin-bottom: 16px;
+        }
+
+        .modal-body .unit-description {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 20px;
+            border-right: 4px solid #1a4b6d;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .modal-body .unit-description p {
+            color: #1e2b3f;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .modal-body .unit-description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-body .unit-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .modal-body .detail-item {
+            background: #f0f4f8;
+            padding: 12px 16px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body .detail-item .label {
+            color: #6a7f9b;
+            font-size: 13px;
+        }
+
+        .modal-body .detail-item .value {
+            font-weight: 700;
+            color: #0f2b4a;
+            font-size: 14px;
+        }
+
+        .modal-body .detail-item .value i {
+            color: #1a4b6d;
+            margin-left: 6px;
+        }
+
+        .modal-body .pdf-download-btn {
+            display: inline-block;
+            background: #27ae60;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 16px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .modal-body .pdf-download-btn:hover {
+            background: #1e8449;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .modal-body .pdf-download-btn i {
+            margin-left: 8px;
+        }
+
         .evaluator-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -530,7 +783,6 @@
             transition: width 0.6s;
         }
 
-        /* ===== REPORTS ===== */
         .reports-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -585,7 +837,6 @@
             padding: 8px 0;
         }
 
-        /* ===== BOTTOM ===== */
         .bottom-section {
             margin-top: 40px;
             background: #fff;
@@ -643,9 +894,25 @@
             margin-left: 6px;
         }
 
-        /* ===== IMPROVED PRINT STYLES ===== */
+        .modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-body::-webkit-scrollbar-track {
+            background: #f0f4f8;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb {
+            background: #1a4b6d;
+            border-radius: 10px;
+        }
+
+        .modal-body::-webkit-scrollbar-thumb:hover {
+            background: #0f2b4a;
+        }
+
         @media print {
-            /* Reset body for printing */
             body {
                 background: #fff !important;
                 padding: 5px !important;
@@ -660,12 +927,10 @@
                 margin: 0 !important;
             }
 
-            /* Hide print buttons and tabs */
             .no-print {
                 display: none !important;
             }
 
-            /* Header styling for print */
             .main-header {
                 background: #0f2b4a !important;
                 -webkit-print-color-adjust: exact !important;
@@ -689,7 +954,6 @@
                 font-size: 14px !important;
             }
 
-            /* Table wrappers */
             .table-wrapper {
                 box-shadow: none !important;
                 border: 1px solid #ccc !important;
@@ -764,10 +1028,6 @@
                 border-bottom: 1px solid #eef2f7 !important;
             }
 
-            table tbody tr:hover {
-                background: transparent !important;
-            }
-
             .select-sm {
                 border: 1px solid #ccc !important;
                 background: #fafcfd !important;
@@ -787,6 +1047,13 @@
                 padding: 1px 6px !important;
             }
 
+            .info-btn {
+                display: none !important;
+            }
+            .pdf-btn {
+                display: none !important;
+            }
+
             .hours-cell {
                 font-size: 10px !important;
             }
@@ -798,7 +1065,6 @@
                 display: none !important;
             }
 
-            /* Evaluator cards */
             .evaluator-grid {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -835,7 +1101,6 @@
                 print-color-adjust: exact !important;
             }
 
-            /* Reports */
             .reports-grid {
                 display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
@@ -862,7 +1127,6 @@
                 font-size: 13px !important;
             }
 
-            /* Bottom section */
             .bottom-section {
                 border: 1px solid #ccc !important;
                 box-shadow: none !important;
@@ -888,43 +1152,25 @@
                 padding: 4px 16px !important;
             }
 
-            /* Show all tab contents when printing */
             .tab-content {
                 display: block !important;
                 animation: none !important;
             }
 
-            /* Page break controls */
-            .page-break-before {
-                page-break-before: always !important;
+            @page {
+                size: A4 landscape !important;
+                margin: 8mm !important;
             }
 
-            .page-break-after {
-                page-break-after: always !important;
-            }
-
-            .table-wrapper {
-                page-break-inside: avoid !important;
-                break-inside: avoid !important;
-            }
-
-            /* Ensure all content fits */
-            .table-scroll {
-                overflow: visible !important;
-            }
-
-            /* Keep colors */
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
             }
 
-            /* Hide empty tabs */
             .tab-content:empty {
                 display: none !important;
             }
 
-            /* Adjust header for print */
             .main-header {
                 flex-wrap: nowrap !important;
                 gap: 8px !important;
@@ -946,23 +1192,8 @@
                 font-size: 24px !important;
                 padding: 6px !important;
             }
-
-            /* Ensure page fits */
-            @page {
-                size: A4 landscape !important;
-                margin: 8mm !important;
-            }
-
-            /* Forced page breaks between major sections */
-            .level-section {
-                page-break-before: always !important;
-            }
-            .level-section:first-child {
-                page-break-before: avoid !important;
-            }
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
             .main-header {
                 flex-direction: column;
@@ -1030,6 +1261,12 @@
                 padding: 10px 20px;
                 font-size: 14px;
             }
+            .modal-body .unit-details {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                max-width: 98%;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1044,13 +1281,21 @@
                 align-items: flex-start;
                 gap: 6px;
             }
+            .modal-header h2 {
+                font-size: 18px;
+            }
+            .modal-body {
+                padding: 20px;
+            }
+            .modal-body .unit-title {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <!-- HEADER -->
         <header class="main-header">
             <div class="header-left">
                 <div class="school-logo">
@@ -1073,7 +1318,6 @@
             </div>
         </header>
 
-        <!-- PRINT BUTTONS -->
         <div class="print-btn-container no-print">
             <button class="print-btn" onclick="printCurrentTab()">
                 <i class="fas fa-print"></i> طباعة الصفحة الحالية
@@ -1083,7 +1327,6 @@
             </button>
         </div>
 
-        <!-- TABS -->
         <div class="tabs-container no-print">
             <button class="tab-btn active" data-tab="tab-level2">
                 <i class="fas fa-layer-group"></i> المستوى الثاني (الصف العاشر)
@@ -1098,7 +1341,7 @@
                 <span class="badge" id="badge-level3-12">0</span>
             </button>
             <button class="tab-btn" data-tab="tab-evaluators">
-                <i class="fas fa-users"></i> المقيمين
+                <i class="fas fa-users"></i> المقييمين
                 <span class="badge" id="badge-evaluators">0</span>
             </button>
             <button class="tab-btn" data-tab="tab-reports">
@@ -1106,9 +1349,7 @@
             </button>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- TAB 1: LEVEL 2 -->
-        <!-- ============================================================ -->
+        <!-- ===== LEVEL 2 ===== -->
         <div class="tab-content active" id="tab-level2">
             <div class="table-wrapper semester-1" id="level2-semester1">
                 <div class="table-header">
@@ -1123,11 +1364,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level2-s1"></tbody>
@@ -1148,11 +1389,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level2-s2"></tbody>
@@ -1173,11 +1414,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level2-s3"></tbody>
@@ -1186,9 +1427,7 @@
             </div>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- TAB 2: LEVEL 3 - YEAR 11 -->
-        <!-- ============================================================ -->
+        <!-- ===== LEVEL 3 - YEAR 11 ===== -->
         <div class="tab-content" id="tab-level3-11">
             <div class="table-wrapper semester-1" id="level3-11-semester1">
                 <div class="table-header">
@@ -1203,11 +1442,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-11-s1"></tbody>
@@ -1228,11 +1467,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-11-s2"></tbody>
@@ -1253,11 +1492,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-11-s3"></tbody>
@@ -1266,9 +1505,7 @@
             </div>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- TAB 3: LEVEL 3 - YEAR 12 -->
-        <!-- ============================================================ -->
+        <!-- ===== LEVEL 3 - YEAR 12 ===== -->
         <div class="tab-content" id="tab-level3-12">
             <div class="table-wrapper semester-1" id="level3-12-semester1">
                 <div class="table-header">
@@ -1283,11 +1520,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-12-s1"></tbody>
@@ -1308,11 +1545,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-12-s2"></tbody>
@@ -1333,11 +1570,11 @@
                                 <th>الوحدة / المهمة</th>
                                 <th>أهداف التعلم</th>
                                 <th>ساعات</th>
-                                <th>تاريخ التوزيع</th>
-                                <th>تاريخ الاستلام</th>
-                                <th>تاريخ القرار</th>
-                                <th>المقيّم</th>
-                                <th>المدقق الداخلي</th>
+                                <th>التوزيع</th>
+                                <th>الاستلام</th>
+                                <th>القرار</th>
+                                <th>المقييم</th>
+                                <th>المدقق</th>
                             </tr>
                         </thead>
                         <tbody id="table-level3-12-s3"></tbody>
@@ -1346,20 +1583,16 @@
             </div>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- TAB 4: EVALUATORS -->
-        <!-- ============================================================ -->
+        <!-- ===== EVALUATORS ===== -->
         <div class="tab-content" id="tab-evaluators">
             <div style="margin-bottom:20px;">
-                <h2 style="font-size:24px;font-weight:800;color:#0f2b4a;"><i class="fas fa-users" style="color:#1a4b6d;"></i> المقيمين</h2>
+                <h2 style="font-size:24px;font-weight:800;color:#0f2b4a;"><i class="fas fa-users" style="color:#1a4b6d;"></i> المقييمين</h2>
                 <p style="color:#4a5a72;">عرض تفصيلي للمقييمين وعدد الواجبات وساعات التدريس الموزعة عليهم</p>
             </div>
             <div class="evaluator-grid" id="evaluatorGrid"></div>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- TAB 5: REPORTS -->
-        <!-- ============================================================ -->
+        <!-- ===== REPORTS ===== -->
         <div class="tab-content" id="tab-reports">
             <div style="margin-bottom:20px;">
                 <h2 style="font-size:24px;font-weight:800;color:#0f2b4a;"><i class="fas fa-chart-pie" style="color:#1a4b6d;"></i> التقارير الشاملة</h2>
@@ -1368,14 +1601,12 @@
             <div class="reports-grid" id="reportsGrid"></div>
         </div>
 
-        <!-- ============================================================ -->
-        <!-- BOTTOM SECTION -->
-        <!-- ============================================================ -->
+        <!-- ===== BOTTOM ===== -->
         <div class="bottom-section">
             <div class="evaluator-info">
                 <div class="big-icon"><i class="fas fa-user-cog"></i></div>
                 <div>
-                    <h3>تطوير المقيّم: منذر الزعبي</h3>
+                    <h3>اعداد المقييم: منذر الزعبي</h3>
                     <p><i class="fas fa-clock"></i> إجمالي ساعات التدريس الكلي: <strong id="totalTeachingHours">0</strong> ساعة</p>
                 </div>
             </div>
@@ -1387,9 +1618,22 @@
 
     </div>
 
+    <!-- ===== MODAL ===== -->
+    <div class="modal-overlay" id="unitModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-info-circle"></i> <span id="modalTitle">وصف الوحدة</span></h2>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
     <script>
         // ================================================================
-        //  أوزان الوحدات (بالساعات)
+        //  UNIT HOURS
         // ================================================================
         const unitHours = {
             'الوحدة 1: أنظمة تكنولوجيا المعلومات - الاستراتيجية والإدارة والبنية الأساسية': 14,
@@ -1412,16 +1656,132 @@
         };
 
         // ================================================================
+        //  UNIT DESCRIPTIONS - مختصرة ولكنها تغطي المحتوى الأساسي
+        // ================================================================
+        const unitDescriptions = {
+            // ===== LEVEL 2 =====
+            'الوحدة 1: استخدام تكنولوجيا المعلومات لدعم المعلومات والاتصالات في المؤسسات': {
+                description: 'تهدف هذه الوحدة إلى تمكين المتعلمين من تطوير فهم للطرق التي يمكن أن توفر بها تكنولوجيا المعلومات قيمة للمنظمات والتفاعل مع أصحاب المصلحة.',
+                objectives: '• اكتشاف كيفية تلبية تكنولوجيا المعلومات احتياجات المؤسسات\n• التخطيط لحملة إعلامية لمؤسسة محددة\n• إنتاج حملة إعلامية لمؤسسة محددة',
+                learningOutcomes: 'أ- استكشاف كيفية تلبية تكنولوجيا المعلومات احتياجات المؤسسات\nب- التخطيط لحملة إعلامية لمؤسسة محددة\nج- إنتاج حملة إعلامية لمؤسسة محددة',
+                pdfFile: 'استخدام تكنولوجيا المعلومات لدعم المعلومات والاتصالات في المؤسسات.pdf'
+            },
+            'الوحدة 2: نمذجة البيانات وجداول البيانات': {
+                description: 'سوف يبحث المتعلمون في خصائص البيانات والمعلومات وكيف يمكن للمعلومات أن تساعد المؤسسات في صنع القرار.',
+                objectives: '• فهم دور البيانات والمعلومات في المؤسسات\n• إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات\n• مراجعة فعالية لوحة المعلومات لتوفير المعلومات',
+                learningOutcomes: 'أ- فهم دور البيانات والمعلومات في المؤسسات\nب- إنشاء لوحة معلومات باستخدام أساليب معالجة البيانات\nج- مراجعة فعالية لوحة المعلومات لتوفير المعلومات',
+                pdfFile: 'نمذجة البيانات وجداول البيانات.pdf'
+            },
+            'الوحدة 4: مقدمة في شبكات الحاسوب': {
+                description: 'تبحث هذه الوحدة الغرض من شبكات الكمبيوتر ومكوناتها، وتستكشف كيفية تصميمها وتنفيذها واختبارها.',
+                objectives: '• فهم بيئة شبكة الكمبيوتر وتهديدات الأمان\n• تصميم شبكة كمبيوتر\n• تنفيذ شبكة كمبيوتر واختبارها',
+                learningOutcomes: 'أ- فهم بيئة شبكة الكمبيوتر وتهديدات الأمان\nب- تصميم شبكة كمبيوتر\nج- تنفيذ شبكة كمبيوتر واختبارها',
+                pdfFile: 'مقدمة في شبكات الحاسوب.pdf'
+            },
+            'الوحدة 5: مقدمة في البرمجة': {
+                description: 'يدرس المتعلمون المفاهيم الأساسية للبرمجة ويطورون فهمًا للنماذج المختلفة للبرمجة.',
+                objectives: '• فهم الميزات الرئيسية لنماذج البرمجة المختلفة\n• تطوير حل برمجي واختباره\n• مراجعة حل البرنامج',
+                learningOutcomes: 'أ- فهم الميزات الرئيسية لنماذج البرمجة المختلفة\nب- تطوير حل برمجي واختباره\nج- مراجعة حل البرنامج',
+                pdfFile: 'مقدمة في البرمجة.pdf'
+            },
+            'الوحدة 6: مقدمة في الرسوم الرقمية والرسوم المتحركة': {
+                description: 'سيتعلم المتعلمون كيفية استخدام الرسومات الرقمية والرسوم المتحركة في المنتجات الرقمية، وتصميم وتطوير محتوى بصري جذاب.',
+                objectives: '• استكشاف استخدام الرسومات الرقمية والرسوم المتحركة\n• تصميم الرسومات الرقمية والرسوم المتحركة\n• تطوير الرسومات الرقمية والرسوم المتحركة',
+                learningOutcomes: 'أ- استكشاف استخدام الرسومات والرسوم المتحركة في المنتجات الرقمية\nب- تصميم الرسومات الرقمية والرسوم المتحركة\nج- تطوير الرسومات الرقمية والرسوم المتحركة',
+                pdfFile: 'مقدمة في الرسوم الرقمية والرسوم المتحركة.pdf'
+            },
+            'الوحدة 7: مقدمة في تطوير المواقع': {
+                description: 'يتعلم المتعلمون استخدامات وميزات مواقع الويب، ويقومون بتصميم وتطوير موقع ويب لتلبية متطلبات المستخدم.',
+                objectives: '• التعرف على استخدامات وميزات مواقع الويب\n• تصميم موقع ويب لتلبية متطلبات المستخدم\n• تطوير واختبار موقع ويب',
+                learningOutcomes: 'أ- التعرف على استخدامات وميزات مواقع الويب\nب- تصميم موقع ويب لتلبية متطلبات المستخدم\nج- تطوير واختبار موقع ويب',
+                pdfFile: 'مقدمة في تطوير المواقع.pdf'
+            },
+            'الوحدة 8: مقدمة في التطبيقات': {
+                description: 'يتحقق المتعلمون من التطبيقات والأجهزة المحمولة، ويقومون بتصميم وتطوير تطبيق بسيط لتلبية متطلبات محددة.',
+                objectives: '• التحقيق في التطبيقات والأجهزة المحمولة\n• تصميم تطبيق لتلبية المتطلبات المحددة\n• تطوير واختبار تطبيق',
+                learningOutcomes: 'أ- التحقيق في التطبيقات والأجهزة المحمولة\nب- تصميم تطبيق لتلبية المتطلبات المحددة\nج- تطوير واختبار تطبيق',
+                pdfFile: 'مقدمة في التطبيقات.pdf'
+            },
+            'الوحدة 9: مقدمة في تصميم الألعاب': {
+                description: 'يتحقق المتعلمون في كيفية تلبية ألعاب الحاسوب لتوقعات المستخدمين، ويقومون بتصميم لعبة كمبيوتر وتقديم فكرة اللعبة.',
+                objectives: '• التحقيق في تلبية ألعاب الحاسوب لتوقعات المستخدمين\n• تصميم لعبة كمبيوتر\n• تقديم تصميمات ألعاب الكمبيوتر',
+                learningOutcomes: 'أ- التحقيق في كيفية تلبية ألعاب الحاسوب لتوقعات المستخدمين\nب- تصميم لعبة كمبيوتر\nج- تقديم تصميمات ألعاب الكمبيوتر',
+                pdfFile: 'مقدمة في تصميم الألعاب.pdf'
+            },
+
+            // ===== LEVEL 3 =====
+            'الوحدة 1: أنظمة تكنولوجيا المعلومات - الاستراتيجية والإدارة والبنية الأساسية': {
+                description: 'يدرس المتعلمون دور أنظمة الكمبيوتر والآثار المترتبة على استخدامها في المواقف الشخصية والمهنية.',
+                objectives: '• اكتشاف كيف تلبي البنية الأساسية احتياجات المؤسسات\n• فهم كيفية استفادة المؤسسات من البيانات\n• وضع سياسات لاستخدام تكنولوجيا المعلومات',
+                learningOutcomes: 'أ- اكتشاف كيف تلبي البنية الأساسية لتكنولوجيا المعلومات احتياجات المؤسسات\nب- فهم كيفية استخدام المؤسسات للبيانات والمعلومات\nج- وضع سياسات لاستخدام تكنولوجيا المعلومات',
+                pdfFile: 'أنظمة تكنولوجيا المعلومات - الاستراتيجية والإدارة والبنية الأساسية.pdf'
+            },
+            'الوحدة 4: البرمجة': {
+                description: 'يدرس المتعلمون المفاهيم الأساسية والآثار المترتبة على لغات البرمجة لتصميم وتطوير واختبار برامج الكمبيوتر.',
+                objectives: '• دراسة مهارات التفكير الحسابي\n• تصميم حل برمجي\n• تطوير حل برمجي',
+                learningOutcomes: 'أ- دراسة مهارات التفكير الحسابي ومبادئ البرمجة الحاسوبية\nب- تصميم حل برمجي لتلبية متطلبات العميل\nج- تطوير حل برمجي لتلبية متطلبات العميل',
+                pdfFile: 'البرمجة.pdf'
+            },
+            'الوحدة 6: تطوير المواقع الالكترونية': {
+                description: 'تركز هذه الوحدة على فهم مبادئ تطوير المواقع الإلكترونية، وتصميم وتطوير مواقع ويب تفاعلية.',
+                objectives: '• فهم مبادئ تطوير مواقع الويب\n• تصميم موقع ويب\n• تطوير موقع ويب',
+                learningOutcomes: 'أ- فهم مبادئ تطوير مواقع الويب\nب- تصميم موقع ويب لتلبية متطلبات العميل\nج- تطوير موقع ويب لتلبية متطلبات العميل',
+                pdfFile: 'تطوير المواقع الالكترونية.pdf'
+            },
+            'الوحدة 7: تطوير تطبيقات الاجهزة المحمولة': {
+                description: 'يستكشف المتعلمون تطبيقات الأجهزة المحمولة وتصميماتها، ويطورون تطبيقًا مخصصًا للاستخدام على الأجهزة المحمولة.',
+                objectives: '• دراسة تطبيقات الأجهزة المحمولة\n• تصميم تطبيق جهاز محمول\n• تطوير تطبيق جهاز محمول',
+                learningOutcomes: 'أ- دراسة تطبيقات الأجهزة المحمولة والأجهزة المحمولة\nب- تصميم تطبيق جهاز محمول يستخدم وظائف الجهاز\nج- تطوير تطبيق جهاز محمول يستخدم وظائف الجهاز',
+                pdfFile: 'تطوير تطبيقات الاجهزة المحمولة.pdf'
+            },
+            'الوحدة 8: تطوير ألعاب الحاسوب': {
+                description: 'تغطي هذه الوحدة أساسيات تطوير ألعاب الحاسوب، من التصميم إلى التنفيذ.',
+                objectives: '• دراسة التقنيات المستخدمة في ألعاب الحاسوب\n• تصميم لعبة كمبيوتر\n• تطوير لعبة كمبيوتر',
+                learningOutcomes: 'أ- التحقق من التقنيات المستخدمة في ألعاب الكمبيوتر\nب- تصميم لعبة كمبيوتر لتلبية متطلبات العميل\nج- تطوير لعبة كمبيوتر لتلبية متطلبات العميل',
+                pdfFile: 'تطوير ألعاب الحاسوب.pdf'
+            },
+            'الوحدة 9: إدارة مشاريع تكنولوجيا المعلومات': {
+                description: 'يقوم المتعلمون بالتحقيق في مبادئ ومنهجيات إدارة المشاريع وإدارة مشروع تكنولوجيا المعلومات من البداية إلى النهاية.',
+                objectives: '• التحقيق في مبادئ إدارة المشاريع\n• تنفيذ إجراءات البداية\n• التخطيط والتنفيذ والمراقبة\n• إغلاق المشروع',
+                learningOutcomes: 'أ- التحقيق في مبادئ ومنهجيات إدارة مشاريع تكنولوجيا المعلومات\nب- تنفيذ إجراءات البداية لمشروع\nج- التخطيط والتنفيذ والمراقبة والتحكم\nد- إغلاق المشروع',
+                pdfFile: 'إدارة مشاريع تكنولوجيا المعلومات.pdf'
+            },
+            'الوحدة 11: الأمن السيبراني وإدارة الحوادث': {
+                description: 'تهدف هذه الوحدة إلى تعريف الطالب بتهديدات الأمن السيبراني وكيفية حماية الأنظمة والشبكات.',
+                objectives: '• فهم تهديدات الأمن السيبراني\n• استكشاف الآثار الأمنية للشبكات\n• وضع خطة حماية\n• فحص إجراءات جمع الأدلة',
+                learningOutcomes: 'أ- فهم تهديدات الأمن السيبراني وثغرات النظام\nب- استكشاف الآثار الأمنية للأنظمة المتصلة بالشبكة\nج- وضع خطة حماية الأمن السيبراني\nد- فحص إجراءات جمع الأدلة الجنائية',
+                pdfFile: 'الأمن السيبراني وإدارة الحوادث.pdf'
+            },
+            'الوحدة 12: الدعم الفني لتكنولوجيا المعلومات والإدارة': {
+                description: 'تمثل الدعم الفني الفعال لتكنولوجيا المعلومات وإدارة الأنظمة عنصرًا حيويًا للأداء.',
+                objectives: '• فحص احتياجات الدعم والإدارة\n• تنفيذ أنشطة الدعم الروتينية\n• وضع خطة دعم وإدارة',
+                learningOutcomes: 'أ- فحص دعم نظام تكنولوجيا المعلومات واحتياجات الإدارة\nب- تنفيذ أنشطة الدعم والإدارة الروتينية\nج- وضع خطة لدعم وإدارة نظام تكنولوجيا المعلومات',
+                pdfFile: 'الدعم الفني لتكنولوجيا المعلومات والإدارة.pdf'
+            },
+            'الوحدة 21: مقدمة في الذكاء الاصطناعي (AI)': {
+                description: 'تهدف هذه الوحدة إلى تعريف الطالب بمفاهيم الذكاء الاصطناعي وتطبيقاته المختلفة.',
+                objectives: '• التحقيق في استخدامات الذكاء الاصطناعي\n• تخطيط حل الذكاء الاصطناعي\n• تطوير حل الذكاء الاصطناعي',
+                learningOutcomes: 'أ- التحقيق في استخدامات وتطبيقات الذكاء الاصطناعي\nب- تخطيط حل الذكاء الاصطناعي وإعداده\nج- تطوير حل الذكاء الاصطناعي',
+                pdfFile: 'مقدمة في الذكاء الاصطناعي (AI).pdf'
+            }
+        };
+
+        // ================================================================
+        //  PDF FILES MAPPING - ربط كل وحدة بملف PDF الخاص بها
+        // ================================================================
+        // الملفات متاحة في نفس المجلد
+        // سيتم استخدام الرابط النسبي لتحميل الملفات
+
+        // ================================================================
         //  DATA
         // ================================================================
         const evaluatorsList = [
             { name: 'فادي الحناوي', role: 'مقييم' },
-            { name: 'منذر الزعبي', role: 'مقييم' },
+            { name: 'منذر الزعبي', role: 'رئيس المقييمين' },
             { name: 'سالم سميرات', role: 'مقييم' },
             { name: 'ثائر أبو زريق', role: 'مقييم' }
         ];
 
-        // بيانات الواجبات
         const assignments = [
             // ===== LEVEL 2 =====
             // الفصل الأول
@@ -1438,7 +1798,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 2,
                 level: 'Level 2',
                 semester: 'الفصل الأول',
@@ -1466,7 +1827,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 4,
                 level: 'Level 2',
                 semester: 'الفصل الثاني',
@@ -1479,7 +1841,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 5,
                 level: 'Level 2',
                 semester: 'الفصل الثاني',
@@ -1492,7 +1855,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 6,
                 level: 'Level 2',
                 semester: 'الفصل الثاني',
@@ -1505,7 +1869,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 7,
                 level: 'Level 2',
                 semester: 'الفصل الثاني',
@@ -1518,7 +1883,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 8,
                 level: 'Level 2',
                 semester: 'الفصل الثاني',
@@ -1546,7 +1912,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 10,
                 level: 'Level 2',
                 semester: 'الفصل الثالث',
@@ -1559,7 +1926,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 11,
                 level: 'Level 2',
                 semester: 'الفصل الثالث',
@@ -1572,7 +1940,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 12,
                 level: 'Level 2',
                 semester: 'الفصل الثالث',
@@ -1585,7 +1954,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 13,
                 level: 'Level 2',
                 semester: 'الفصل الثالث',
@@ -1598,7 +1968,8 @@
                 evaluator: '',
                 verifier: '',
                 year: null
-            }, {
+            },
+            {
                 id: 14,
                 level: 'Level 2',
                 semester: 'الفصل الثالث',
@@ -1643,7 +2014,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 17,
                 level: 'Level 3',
                 semester: 'الفصل الثاني',
@@ -1656,7 +2028,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 18,
                 level: 'Level 3',
                 semester: 'الفصل الثاني',
@@ -1684,7 +2057,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 20,
                 level: 'Level 3',
                 semester: 'الفصل الثالث',
@@ -1697,7 +2071,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 21,
                 level: 'Level 3',
                 semester: 'الفصل الثالث',
@@ -1710,7 +2085,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 22,
                 level: 'Level 3',
                 semester: 'الفصل الثالث',
@@ -1723,7 +2099,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 11
-            }, {
+            },
+            {
                 id: 23,
                 level: 'Level 3',
                 semester: 'الفصل الثالث',
@@ -1753,7 +2130,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 12
-            }, {
+            },
+            {
                 id: 25,
                 level: 'Level 3',
                 semester: 'الفصل الأول',
@@ -1781,7 +2159,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 12
-            }, {
+            },
+            {
                 id: 27,
                 level: 'Level 3',
                 semester: 'الفصل الثاني',
@@ -1794,7 +2173,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 12
-            }, {
+            },
+            {
                 id: 28,
                 level: 'Level 3',
                 semester: 'الفصل الثاني',
@@ -1807,7 +2187,8 @@
                 evaluator: '',
                 verifier: '',
                 year: 12
-            }, {
+            },
+            {
                 id: 29,
                 level: 'Level 3',
                 semester: 'الفصل الثاني',
@@ -1839,7 +2220,7 @@
         ];
 
         // ================================================================
-        //  SAVE & LOAD FUNCTIONS (localStorage)
+        //  SAVE & LOAD
         // ================================================================
         function saveAssignments() {
             try {
@@ -1873,7 +2254,7 @@
         }
 
         // ================================================================
-        //  FUNCTIONS
+        //  HELPERS
         // ================================================================
         function getUnitHours(unitName) {
             return unitHours[unitName] || 0;
@@ -1903,6 +2284,121 @@
             return diff >= 0 && diff <= 7;
         }
 
+        function getUnitDescription(unitName) {
+            return unitDescriptions[unitName] || {
+                description: 'لا يوجد وصف تفصيلي لهذه الوحدة',
+                objectives: 'لم يتم تحديد الأهداف بعد',
+                learningOutcomes: 'لم يتم تحديدها',
+                pdfFile: null
+            };
+        }
+
+        function downloadPDF(pdfFile, unitName) {
+            if (!pdfFile) {
+                alert('لا يوجد ملف PDF متاح لهذه الوحدة');
+                return;
+            }
+            // محاولة تحميل الملف من نفس المجلد
+            const link = document.createElement('a');
+            link.href = pdfFile;
+            link.download = pdfFile;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // ================================================================
+        //  MODAL FUNCTIONS
+        // ================================================================
+        function openModal(unitName, taskName, learning) {
+            const modal = document.getElementById('unitModal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            const info = getUnitDescription(unitName);
+            const hours = getUnitHours(unitName);
+            const assignment = assignments.find(a => a.unit === unitName && a.task === taskName);
+
+            title.textContent = unitName;
+
+            // تحديد مستوى الوحدة
+            let levelText = '';
+            if (assignment) {
+                if (assignment.level === 'Level 2') levelText = 'المستوى الثاني (الصف العاشر)';
+                else if (assignment.year === 11) levelText = 'المستوى الثالث (الصف الحادي عشر)';
+                else if (assignment.year === 12) levelText = 'المستوى الثالث (الصف الثاني عشر)';
+            }
+
+            body.innerHTML = `
+                <div class="unit-code"><i class="fas fa-tag"></i> ${hours} ساعة تدريس</div>
+                <div class="unit-title">${unitName}</div>
+                <div class="unit-task"><i class="fas fa-tasks"></i> المهمة: ${taskName}</div>
+                <div style="margin-bottom:12px;font-size:14px;color:#4a5a72;">
+                    <i class="fas fa-layer-group"></i> ${levelText}
+                </div>
+                <div class="unit-description">
+                    <p><strong>📖 وصف المادة:</strong></p>
+                    <p>${info.description}</p>
+                </div>
+                <div style="margin-bottom:16px;">
+                    <p><strong>🎯 أهداف التعلم العامة:</strong></p>
+                    <p style="color:#1e2b3f;font-size:14px;line-height:1.8;white-space:pre-line;">${info.objectives}</p>
+                </div>
+                <div style="margin-bottom:16px;background:#f0f4f8;border-radius:12px;padding:16px;">
+                    <p><strong><i class="fas fa-bullseye" style="color:#1a4b6d;"></i> أهداف التعلم التفصيلية:</strong></p>
+                    <p style="color:#1e2b3f;font-size:14px;line-height:1.8;white-space:pre-line;margin-top:8px;">${info.learningOutcomes || learning}</p>
+                </div>
+                <div style="margin-bottom:16px;background:#fef9e7;border-radius:12px;padding:16px;border-right:4px solid #f39c12;">
+                    <p><strong><i class="fas fa-lightbulb" style="color:#f39c12;"></i> أهداف التعلم حسب المهمة:</strong></p>
+                    <p style="color:#1e2b3f;font-size:14px;line-height:1.8;white-space:pre-line;margin-top:8px;">${learning}</p>
+                </div>
+                <div class="unit-details">
+                    <div class="detail-item">
+                        <span class="label"><i class="far fa-calendar-alt"></i> تاريخ التوزيع</span>
+                        <span class="value">${formatDate(assignment?.distribution)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label"><i class="far fa-calendar-check"></i> تاريخ الاستلام</span>
+                        <span class="value">${formatDate(assignment?.submission)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label"><i class="fas fa-clock"></i> عدد الساعات</span>
+                        <span class="value">${hours} ساعة</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label"><i class="fas fa-layer-group"></i> المستوى</span>
+                        <span class="value">${levelText}</span>
+                    </div>
+                </div>
+                ${info.pdfFile ? `
+                    <button class="pdf-download-btn no-print" onclick="downloadPDF('${info.pdfFile}', '${unitName}')">
+                        <i class="fas fa-file-pdf"></i> تحميل ملف PDF لوصف الوحدة
+                    </button>
+                ` : ''}
+            `;
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('unitModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('unitModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
         // ================================================================
         //  RENDER TABLE
         // ================================================================
@@ -1917,12 +2413,26 @@
             tbody.innerHTML = data.map((a, index) => {
                 const upcoming = isUpcoming(a.submission);
                 const hours = getUnitHours(a.unit);
+                const info = getUnitDescription(a.unit);
+                const hasPdf = info.pdfFile ? true : false;
                 return `
                     <tr>
                         <td>${index + 1}</td>
                         <td>
                             <div class="task-title">${a.task}</div>
-                            <div class="unit-name">${a.unit}</div>
+                            <div class="unit-name">
+                                ${a.unit}
+                                <span class="action-buttons">
+                                    <button class="info-btn" onclick="openModal('${a.unit.replace(/'/g, "\\'")}', '${a.task.replace(/'/g, "\\'")}', '${a.learning.replace(/'/g, "\\'").replace(/\n/g, '\\n')}')" title="عرض وصف المادة">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                    ${hasPdf ? `
+                                        <button class="pdf-btn" onclick="downloadPDF('${info.pdfFile}', '${a.unit}')" title="تحميل ملف PDF لوصف الوحدة">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </button>
+                                    ` : ''}
+                                </span>
+                            </div>
                         </td>
                         <td style="font-size:12px;color:#2d4057;max-width:200px;">${a.learning.replace(/\n/g, '<br>')}</td>
                         <td class="hours-cell">${hours}</td>
@@ -1948,7 +2458,6 @@
                 `;
             }).join('');
 
-            // Attach events with save
             tbody.querySelectorAll('.evaluator-select').forEach(sel => {
                 sel.onchange = function() {
                     const id = parseInt(this.dataset.id);
@@ -2066,7 +2575,7 @@
         }
 
         // ================================================================
-        //  UPDATE ALL STATS
+        //  UPDATE STATS
         // ================================================================
         function updateAllStats() {
             const total = assignments.length;
@@ -2079,7 +2588,6 @@
             document.getElementById('evaluatorCount').textContent = evaluatorsList.length;
             document.getElementById('totalEvaluatedBottom').textContent = evaluated;
 
-            // Badges
             const level2 = assignments.filter(a => a.level === 'Level 2');
             const level3_11 = assignments.filter(a => a.level === 'Level 3' && a.year === 11);
             const level3_12 = assignments.filter(a => a.level === 'Level 3' && a.year === 12);
@@ -2089,11 +2597,9 @@
             document.getElementById('badge-level3-12').textContent = level3_12.length;
             document.getElementById('badge-evaluators').textContent = evaluatorsList.length;
 
-            // Total teaching hours for all evaluators
             const totalHours = evaluatorsList.reduce((sum, e) => sum + getEvaluatorHours(e.name), 0);
             document.getElementById('totalTeachingHours').textContent = totalHours;
 
-            // Render all tables
             renderTable('table-level2-s1', level2.filter(a => a.semester === 'الفصل الأول'));
             renderTable('table-level2-s2', level2.filter(a => a.semester === 'الفصل الثاني'));
             renderTable('table-level2-s3', level2.filter(a => a.semester === 'الفصل الثالث'));
@@ -2114,24 +2620,19 @@
         //  PRINT FUNCTIONS
         // ================================================================
         function printCurrentTab() {
-            // Save current state before print
             saveAssignments();
             window.print();
         }
 
         function printAllTabs() {
-            // Save current state
             saveAssignments();
-            
-            // Show all tabs content
+
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.add('active');
             });
-            
-            // Print
+
             window.print();
-            
-            // Revert to current tab after print
+
             setTimeout(() => {
                 document.querySelectorAll('.tab-content').forEach(tab => {
                     tab.classList.remove('active');
@@ -2158,12 +2659,9 @@
         // ================================================================
         //  INIT
         // ================================================================
-        // Load saved data first
         loadAssignments();
-        // Then render
         updateAllStats();
-        
-        // Save on page unload
+
         window.addEventListener('beforeunload', function() {
             saveAssignments();
         });
