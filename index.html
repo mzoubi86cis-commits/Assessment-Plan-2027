@@ -837,6 +837,160 @@
             padding: 8px 0;
         }
 
+        /* ===== FOOTER ===== */
+        .footer {
+            margin-top: 50px;
+            background: linear-gradient(135deg, #0f2b4a, #1a4b6d);
+            border-radius: 24px;
+            padding: 40px 35px 30px;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(15, 43, 74, 0.2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #7bc6f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col h4 i {
+            color: #fcd34d;
+        }
+
+        .footer-col p,
+        .footer-col .contact-item {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+            color: #e8edf5;
+            margin-bottom: 6px;
+        }
+
+        .footer-col .contact-item i {
+            width: 24px;
+            color: #7bc6f0;
+            margin-left: 8px;
+        }
+
+        .footer-col .contact-item a {
+            color: #e8edf5;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-col .contact-item a:hover {
+            color: #7bc6f0;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-size: 20px;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-social a:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-social a.facebook:hover {
+            background: #1877f2;
+            border-color: #1877f2;
+        }
+        .footer-social a.twitter:hover {
+            background: #000;
+            border-color: #000;
+        }
+        .footer-social a.instagram:hover {
+            background: #e4405f;
+            border-color: #e4405f;
+        }
+        .footer-social a.whatsapp:hover {
+            background: #25d366;
+            border-color: #25d366;
+        }
+        .footer-social a.youtube:hover {
+            background: #ff0000;
+            border-color: #ff0000;
+        }
+        .footer-social a.linkedin:hover {
+            background: #0a66c2;
+            border-color: #0a66c2;
+        }
+        .footer-social a.tiktok:hover {
+            background: #000;
+            border-color: #000;
+        }
+        .footer-social a.telegram:hover {
+            background: #0088cc;
+            border-color: #0088cc;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-bottom .copyright {
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .footer-bottom .copyright i {
+            color: #e74c3c;
+        }
+
+        .footer-bottom .footer-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom .footer-links a {
+            color: #e8edf5;
+            text-decoration: none;
+            font-size: 13px;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        .footer-bottom .footer-links a:hover {
+            opacity: 1;
+            color: #7bc6f0;
+        }
+
         .bottom-section {
             margin-top: 40px;
             background: #fff;
@@ -1127,6 +1281,19 @@
                 font-size: 13px !important;
             }
 
+            .footer {
+                background: #0f2b4a !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                padding: 20px !important;
+                margin-top: 20px !important;
+            }
+
+            .footer-social a {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             .bottom-section {
                 border: 1px solid #ccc !important;
                 box-shadow: none !important;
@@ -1207,6 +1374,9 @@
                 border-right: none;
                 padding-right: 0;
             }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
@@ -1267,6 +1437,14 @@
             .modal-content {
                 max-width: 98%;
             }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1289,6 +1467,9 @@
             }
             .modal-body .unit-title {
                 font-size: 17px;
+            }
+            .footer {
+                padding: 25px 20px;
             }
         }
     </style>
@@ -1341,7 +1522,7 @@
                 <span class="badge" id="badge-level3-12">0</span>
             </button>
             <button class="tab-btn" data-tab="tab-evaluators">
-                <i class="fas fa-users"></i> المقيمين
+                <i class="fas fa-users"></i> المقييمين
                 <span class="badge" id="badge-evaluators">0</span>
             </button>
             <button class="tab-btn" data-tab="tab-reports">
@@ -1367,7 +1548,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1392,7 +1573,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1417,7 +1598,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1445,7 +1626,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1470,7 +1651,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1495,7 +1676,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1523,7 +1704,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1548,7 +1729,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1573,7 +1754,7 @@
                                 <th>التوزيع</th>
                                 <th>الاستلام</th>
                                 <th>القرار</th>
-                                <th>المقيّم</th>
+                                <th>المقييم</th>
                                 <th>المدقق</th>
                             </tr>
                         </thead>
@@ -1586,7 +1767,7 @@
         <!-- ===== EVALUATORS ===== -->
         <div class="tab-content" id="tab-evaluators">
             <div style="margin-bottom:20px;">
-                <h2 style="font-size:24px;font-weight:800;color:#0f2b4a;"><i class="fas fa-users" style="color:#1a4b6d;"></i> المقيّمين</h2>
+                <h2 style="font-size:24px;font-weight:800;color:#0f2b4a;"><i class="fas fa-users" style="color:#1a4b6d;"></i> المقييمين</h2>
                 <p style="color:#4a5a72;">عرض تفصيلي للمقييمين وعدد الواجبات وساعات التدريس الموزعة عليهم</p>
             </div>
             <div class="evaluator-grid" id="evaluatorGrid"></div>
@@ -1601,12 +1782,12 @@
             <div class="reports-grid" id="reportsGrid"></div>
         </div>
 
-        <!-- ===== BOTTOM ===== -->
+        <!-- ===== BOTTOM SECTION ===== -->
         <div class="bottom-section">
             <div class="evaluator-info">
                 <div class="big-icon"><i class="fas fa-user-cog"></i></div>
                 <div>
-                    <h3>اعداد وتطوير المقيّم: منذر الزعبي</h3>
+                    <h3>اعداد المقييم: منذر الزعبي</h3>
                     <p><i class="fas fa-clock"></i> إجمالي ساعات التدريس الكلي: <strong id="totalTeachingHours">0</strong> ساعة</p>
                 </div>
             </div>
@@ -1615,6 +1796,105 @@
                 <span id="totalEvaluatedBottom">0</span>
             </div>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- FOOTER -->
+        <!-- ============================================================ -->
+        <footer class="footer no-print">
+            <div class="footer-grid">
+                <!-- العمود الأول: المدرسة -->
+                <div class="footer-col">
+                    <h4><i class="fas fa-school"></i> مدرسة الطرة الثانوية للبنين</h4>
+                    <p>وزارة التربية والتعليم</p>
+                    <p style="margin-top:8px;font-size:13px;opacity:0.7;">
+                        <i class="fas fa-map-marker-alt"></i> الأردن - الرمثا
+                    </p>
+                    <p style="font-size:13px;opacity:0.7;">
+                        <i class="fas fa-phone"></i> +962 2 123 4567
+                    </p>
+                    <p style="font-size:13px;opacity:0.7;">
+                        <i class="fas fa-envelope"></i> info@altorreh.edu.jo
+                    </p>
+                </div>
+
+                <!-- العمود الثاني: روابط سريعة -->
+                <div class="footer-col">
+                    <h4><i class="fas fa-link"></i> روابط سريعة</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="#tab-level2">المستوى الثاني</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="#tab-level3-11">المستوى الثالث - الحادي عشر</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="#tab-level3-12">المستوى الثالث - الثاني عشر</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="#tab-evaluators">المقييمين</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-chevron-left"></i>
+                        <a href="#tab-reports">التقارير</a>
+                    </div>
+                </div>
+
+                <!-- العمود الثالث: التواصل الاجتماعي -->
+                <div class="footer-col">
+                    <h4><i class="fas fa-share-alt"></i> تواصل معنا</h4>
+                    <div class="footer-social">
+                        <a href="#" class="facebook" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="twitter" title="تويتر"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="instagram" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="whatsapp" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="youtube" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="linkedin" title="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="tiktok" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="telegram" title="تيليجرام"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+
+                <!-- العمود الرابع: معلومات إضافية -->
+                <div class="footer-col">
+                    <h4><i class="fas fa-info-circle"></i> معلومات</h4>
+                    <div class="contact-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>العام الدراسي 2026-2027</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-users"></i>
+                        <span>عدد المقييمين: 4</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-tasks"></i>
+                        <span id="footerTotalAssignments">0</span>
+                        <span> واجب</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span id="footerTotalHours">0</span>
+                        <span> ساعة تدريس</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- القسم السفلي -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <i class="fas fa-heart"></i>
+                    © 2026-2027  منذر عبدالوهاب الزعبي - جميع الحقوق محفوظة
+                </div>
+                <div class="footer-links">
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">شروط الاستخدام</a>
+                    <a href="#">تواصل معنا</a>
+                    <a href="#">الدعم الفني</a>
+                </div>
+            </div>
+        </footer>
 
     </div>
 
@@ -1656,7 +1936,7 @@
         };
 
         // ================================================================
-        //  UNIT DESCRIPTIONS - مختصرة ولكنها تغطي المحتوى الأساسي
+        //  UNIT DESCRIPTIONS
         // ================================================================
         const unitDescriptions = {
             // ===== LEVEL 2 =====
@@ -1767,17 +2047,11 @@
         };
 
         // ================================================================
-        //  PDF FILES MAPPING - ربط كل وحدة بملف PDF الخاص بها
-        // ================================================================
-        // الملفات متاحة في نفس المجلد
-        // سيتم استخدام الرابط النسبي لتحميل الملفات
-
-        // ================================================================
         //  DATA
         // ================================================================
         const evaluatorsList = [
             { name: 'فادي الحناوي', role: 'مقييم' },
-            { name: 'منذر الزعبي', role: 'رئيس المقيّمين' },
+            { name: 'منذر الزعبي', role: 'رئيس المقييمين' },
             { name: 'سالم سميرات', role: 'مقييم' },
             { name: 'ثائر أبو زريق', role: 'مقييم' }
         ];
@@ -2298,7 +2572,6 @@
                 alert('لا يوجد ملف PDF متاح لهذه الوحدة');
                 return;
             }
-            // محاولة تحميل الملف من نفس المجلد
             const link = document.createElement('a');
             link.href = pdfFile;
             link.download = pdfFile;
@@ -2321,7 +2594,6 @@
 
             title.textContent = unitName;
 
-            // تحديد مستوى الوحدة
             let levelText = '';
             if (assignment) {
                 if (assignment.level === 'Level 2') levelText = 'المستوى الثاني (الصف العاشر)';
@@ -2587,6 +2859,11 @@
             document.getElementById('evaluatedAll').textContent = evaluated;
             document.getElementById('evaluatorCount').textContent = evaluatorsList.length;
             document.getElementById('totalEvaluatedBottom').textContent = evaluated;
+
+            // Footer stats
+            document.getElementById('footerTotalAssignments').textContent = total;
+            const totalHoursAll = assignments.reduce((sum, a) => sum + getUnitHours(a.unit), 0);
+            document.getElementById('footerTotalHours').textContent = totalHoursAll;
 
             const level2 = assignments.filter(a => a.level === 'Level 2');
             const level3_11 = assignments.filter(a => a.level === 'Level 3' && a.year === 11);
